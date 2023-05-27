@@ -1,36 +1,25 @@
-import React, { useState } from "react";
+import Navbar from "../components/Navbar";
+import { useEffect, useState } from "react";
 
-const App = () => {
-  const message = "Home, sweet home!";
-  const teams = ["Liverpool", "Chelsea", "Manchester United", "Arsenal"];
-  let number = 0;
+const Home = () => {
+  const [number, setNumber] = useState(0);
 
-  // reactive state
-  const [newNumber, setNewNumber] = useState(0);
+  useEffect(() => {
+    console.log("Number has changed");
+  }, [number]);
 
-  const addNum = () => {
-    number += 1;
-  };
-
-  const showNum = () => {
-    alert(number);
+  const handleClick = () => {
+    setNumber(number + 1);
   };
 
   return (
     <div>
-      <h1>{message}</h1>
-      <ul>
-        {teams.map((team) => (
-          <li key={team}>{team}</li>
-        ))}
-      </ul>
-      <p>{number}</p>
-      <button onClick={addNum}>addNum</button>
-      <button onClick={showNum}>showNum</button>
-      <p>{newNumber}</p>
-      <button onClick={() => setNewNumber(newNumber + 1)}>addNum</button>
+      <Navbar />
+      <h1>Home</h1>
+      <h1>{number}</h1>
+      <button onClick={handleClick}>Click</button>
     </div>
   );
 };
 
-export default App;
+export default Home;

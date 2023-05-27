@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "title": "Product 1",
+      "price": 5,
+      "img": "https://imagor.network-xyz.com/unsafe/fit-in/846x700/https://cdn.media-xyz.com/media/%D1%84%D0%BE%D0%BB_gDQ6bMJ.png",
+      "id": 1
+    },
+    {
+      "title": "Product 2",
+      "price": 6,
+      "img": "hhttps://st.overclockers.ru/images/soft/2019/12/03/re1.jpg",
+      "id": 2
+    },
+    {
+      "title": "Product 3",
+      "price": 7,
+      "img": "https://disgustingmen.com/wp-content/uploads/2016/03/doomcoverart.0.jpg",
+      "id": 3
+    },
+    {
+      "title": "Product 4",
+      "price": 8,
+      "img": "https://files.vgtimes.ru/posts/2012-08/1344514569_ebzg9.jpg",
+      "id": 4
+    },
+    {
+      "title": "Product 5",
+      "price": 9,
+      "img": "https://s01.riotpixels.net/data/2b/7a/2b7ae3fb-d01f-4348-ad34-11b7114a187f.png/cover.witcher-3-wild-hunt.1600x2033.2014-07-10.344.png",
+      "id": 5
+    },
+    {
+      "title": "Product 6",
+      "price": 10,
+      "img": "https://escorenews.com/media/news/pic-20220130-680x680-6012468682.png",
+      "id": 6
+    },
+    {
+      "title": "Product 7",
+      "price": 11,
+      "img": "https://upload.wikimedia.org/wikipedia/ru/archive/8/88/20200526122428%21Watch_Dogs-_Legion_%28%D0%BE%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0%29.jpg",
+      "id": 7
+    },
+    {
+      "title": "Product 8",
+      "price": 18,
+      "img": "https://upload.wikimedia.org/wikipedia/ru/thumb/c/c8/GTAV_Official_Cover_Art.jpg/274px-GTAV_Official_Cover_Art.jpg",
+      "id": 8
+    },
+    {
+      "title": "Product 9",
+      "price": 20,
+      "img": "https://upload.wikimedia.org/wikipedia/ru/archive/0/03/20200409095618%21Red_Dead_Redemption_2_coverart.jpg",
+      "id": 9
+    },
+    {
+      "title": "Product 10",
+      "price": 10,
+      "img": "https://img.championat.com/i/r/j/16582371762076251814.jpg",
+      "id": 10
+    }
+  ]
+}
