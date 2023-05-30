@@ -1,0 +1,13 @@
+.filters-container {
+   display:flex;
+   gap: 40px;
+   width: 40%;
+   align-items: center;
+   padding: 10px 0;
+   height: 80%;
+}
+
+.filters-search {
+    display:flex;
+    align-items: center;
+}

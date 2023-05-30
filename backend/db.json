@@ -1,64 +1,145 @@
 {
   "products": [
     {
-      "title": "Product 1",
+      "title": "Fallout New Vegas",
       "price": 5,
       "img": "https://imagor.network-xyz.com/unsafe/fit-in/846x700/https://cdn.media-xyz.com/media/%D1%84%D0%BE%D0%BB_gDQ6bMJ.png",
-      "id": 1
+      "id": 1,
+      "category": "PC"
     },
     {
-      "title": "Product 2",
+      "title": "Resident Evil 3 Remake",
       "price": 6,
-      "img": "hhttps://st.overclockers.ru/images/soft/2019/12/03/re1.jpg",
-      "id": 2
+      "img": "https://st.overclockers.ru/images/soft/2019/12/03/re1.jpg",
+      "id": 2,
+      "category": "PC"
     },
     {
-      "title": "Product 3",
+      "title": "Doom",
       "price": 7,
       "img": "https://disgustingmen.com/wp-content/uploads/2016/03/doomcoverart.0.jpg",
-      "id": 3
+      "id": 3,
+      "category": "PC"
     },
     {
-      "title": "Product 4",
+      "title": "Assassin`s Creed 3",
       "price": 8,
       "img": "https://files.vgtimes.ru/posts/2012-08/1344514569_ebzg9.jpg",
-      "id": 4
+      "id": 4,
+      "category": "console"
     },
     {
-      "title": "Product 5",
+      "title": "The Witcher: Wild hunt",
       "price": 9,
       "img": "https://s01.riotpixels.net/data/2b/7a/2b7ae3fb-d01f-4348-ad34-11b7114a187f.png/cover.witcher-3-wild-hunt.1600x2033.2014-07-10.344.png",
-      "id": 5
+      "id": 5,
+      "category": "console"
     },
     {
-      "title": "Product 6",
+      "title": "Cyberpunk 2077",
       "price": 10,
       "img": "https://escorenews.com/media/news/pic-20220130-680x680-6012468682.png",
-      "id": 6
+      "id": 6,
+      "category": "PC"
+
     },
     {
-      "title": "Product 7",
+      "title": "Watch Dogs Legion",
       "price": 11,
       "img": "https://upload.wikimedia.org/wikipedia/ru/archive/8/88/20200526122428%21Watch_Dogs-_Legion_%28%D0%BE%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0%29.jpg",
-      "id": 7
+      "id": 7,
+      "category": "PC"
     },
     {
-      "title": "Product 8",
+      "title": "GTA 5",
       "price": 18,
       "img": "https://upload.wikimedia.org/wikipedia/ru/thumb/c/c8/GTAV_Official_Cover_Art.jpg/274px-GTAV_Official_Cover_Art.jpg",
-      "id": 8
+      "id": 8,
+      "category": "PC"
     },
     {
-      "title": "Product 9",
+      "title": "Red Dead Redemption 2",
       "price": 20,
       "img": "https://upload.wikimedia.org/wikipedia/ru/archive/0/03/20200409095618%21Red_Dead_Redemption_2_coverart.jpg",
-      "id": 9
+      "id": 9,
+      "category": "PC"
     },
     {
-      "title": "Product 10",
+      "title": "Fifa 23",
       "price": 10,
       "img": "https://img.championat.com/i/r/j/16582371762076251814.jpg",
-      "id": 10
+      "id": 10,
+      "category": "console"
+    },
+    {
+      "title": "Watch Dogs 2",
+      "price": 5,
+      "img": "https://upload.wikimedia.org/wikipedia/ru/8/86/Watch_Dogs_2_cover.jpg",
+      "id": 11,
+      "category": "PC"
+    },
+    {
+      "title": "Dead Space",
+      "price": 6,
+      "img": "https://upload.wikimedia.org/wikipedia/ru/archive/5/57/20201216113907%21Dead_Space_Box_Art.jpg",
+      "id": 12,
+      "category": "PC"
+    },
+    {
+      "title": "Hogwarts Legacy",
+      "price": 7,
+      "img": "https://i.playground.ru/p/CITD_Ueb8SJI0QqlpNwnmg.png",
+      "id": 13,
+      "category": "console"
+    },
+    {
+      "title": "Resident Evil: Village",
+      "price": 8,
+      "img": "https://upload.wikimedia.org/wikipedia/ru/2/24/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Resident_Evil_Village.jpg",
+      "id": 14,
+      "category": "PC"
+    },
+    {
+      "title": "Battlefield 2042",
+      "price": 9,
+      "img": "https://img.ixbt.site/live/topics/preview/00/02/15/47/102e0d5cc9.jpg",
+      "id": 15,
+      "category": "PC"
+    },
+    {
+      "title": "Destiny 2",
+      "price": 10,
+      "img": "https://s01.riotpixels.net/data/00/37/00376ddf-f769-4533-bc66-0f400e8516ae.jpg/cover.destiny-2.1528x2153.2017-04-17.5.jpg",
+      "id": 16,
+      "category": "PC"
+    },
+    {
+      "title": "Alien: Isolation",
+      "price": 11,
+      "img": "https://img.xcomdb.ru/pim/JPG/ba/q4WRvm6CjW_500.jpg",
+      "id": 17,
+      "category": "PC"
+    },
+    {
+      "title": "Resident Evil 4",
+      "price": 18,
+      "img": "https://upload.wikimedia.org/wikipedia/ru/6/62/Resident_Evil_4_remake.png",
+      "id": 18,
+      "category": "console"
+    },
+    {
+      "title": "Horizon: Zero Dawn",
+      "price": 20,
+      "img": "https://gamemag.ru/images/uploads/33/0343fe1f3dd811cad3e9602900e83f29.png",
+      "id": 19,
+      "category": "console"
+    },
+    {
+      "title": "Warface",
+      "price": 10,
+      "img": "https://s01.riotpixels.net/data/41/02/4102a4d7-6ebd-44de-8c7e-307eec372fff.jpg/cover.warface.857x1080.2015-10-24.111.jpg",
+      "id": 1000,
+      "category": "PC"
     }
   ]
 }
