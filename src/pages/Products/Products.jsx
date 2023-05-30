@@ -9,7 +9,7 @@ import "./Products.css";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [_, setSearchParams] = useState("");
+  const [searchParams, setSearchParams] = useState("");
   const [currentPage, setCurrentPage] = useState(undefined);
   const [totalCountProducts, setTotalCountProducts] = useState(0);
   const [itemsPerPage] = useState(5);
@@ -19,7 +19,6 @@ const Products = () => {
 
   const search = async () => {
     const searchQuery = searchRef.current.value;
-
     setSearchParams(searchQuery);
     await fetchProducts(searchQuery);
   };
@@ -28,25 +27,13 @@ const Products = () => {
     fetchProducts();
   }, [currentPage]);
 
-  useEffect(() => {
-    let filteredData=[...products]
-    if (category!=="All") {
-      filteredData = products.filter((d) => {
-        return d.category === category; 
-      })
-    }
-    setProducts(filteredData);
-  }, [category]);
-
   const fetchProducts = async (searchQuery = "") => {
     setLoading(true);
-
     const { totalProducts, data } = await productsController.getProducts(
       currentPage,
       itemsPerPage,
       searchQuery
     );
-           
 
     setTotalCountProducts(totalProducts);
     setProducts(data);
@@ -61,25 +48,31 @@ const Products = () => {
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
   const handleCategoryChange = (category) => {
     setCategory(category);
+    setCurrentPage(undefined);
+    setSearchParams("");
   };
+
+  useEffect(() => {
+    let filteredData = [...products];
+    if (category !== "All") {
+      filteredData = products.filter((d) => d.category === category);
+    }
+    setProducts(filteredData);
+  }, [category, products]);
 
   return (
     <div>
       <Navbar />
       <h1>Products</h1>
-      {
-        category
-      }
       <div className="filters-container">
-        <div className="filters-search"> 
+        <div className="filters-search">
           <input type="text" ref={searchRef} />
           <button onClick={search}>Search</button>
         </div>
-        <BasicSelect
-          category={category}
-          setCategory={handleCategoryChange} />
+        <BasicSelect category={category} setCategory={handleCategoryChange} />
       </div>
       {loading ? (
         <h1>Loading...</h1>
