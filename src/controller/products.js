@@ -30,6 +30,10 @@ const productsController = {
     return await axios.post(`${URL}/products`, product);
   },
 
+  async getProductByPrice(price) {
+    return await axios.post(`${URL}/products`, {price});
+  },
+
   async updateProduct(id, product) {
     return await axios.put(`${URL}/products/${id}`, product);
   },

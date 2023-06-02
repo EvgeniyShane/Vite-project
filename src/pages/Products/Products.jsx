@@ -5,6 +5,7 @@ import productsController from "../../controller/products";
 import BasicPagination from "../../components/Pagination";
 import BasicSelect from "../../components/Select";
 import "./Products.css";
+import RangeSlider from "../../components/Slider";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -14,6 +15,7 @@ const Products = () => {
   const [totalCountProducts, setTotalCountProducts] = useState(0);
   const [itemsPerPage] = useState(5);
   const [category, setCategory] = useState("All");
+  const [currentPrices, setCurrentPrices] = useState([0, 20]);
 
   const searchRef = useRef({});
 
@@ -48,7 +50,9 @@ const Products = () => {
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
+  const handleCurrentPricesChange = (currentPrices) => {
+    setCurrentPrices(currentPrices);
+  }
   const handleCategoryChange = (category) => {
     setCategory(category);
     setCurrentPage(undefined);
@@ -63,6 +67,11 @@ const Products = () => {
     setProducts(filteredData);
   }, [category, products]);
 
+  useEffect(async() => {
+    const test = await getProductByPrice (5);
+    console.log (test);
+  }, [currentPrices]);
+
   return (
     <div>
       <Navbar />
@@ -72,6 +81,7 @@ const Products = () => {
           <input type="text" ref={searchRef} />
           <button onClick={search}>Search</button>
         </div>
+        <RangeSlider currentPrices={currentPrices} setCurrentPrices={handleCurrentPricesChange}/>
         <BasicSelect category={category} setCategory={handleCategoryChange} />
       </div>
       {loading ? (
