@@ -6,6 +6,7 @@ import BasicPagination from "../../components/Pagination";
 import BasicSelect from "../../components/Select";
 import "./Products.css";
 import RangeSlider from "../../components/Slider";
+import { useDebounce } from "../../hooks/useDebounce";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -25,16 +26,20 @@ const Products = () => {
     await fetchProducts(searchQuery);
   };
 
+  const priceDebounce = useDebounce(currentPrices, 1000);
+
   useEffect(() => {
     fetchProducts();
-  }, [currentPage]);
+  }, [currentPage, priceDebounce]);
 
   const fetchProducts = async (searchQuery = "") => {
     setLoading(true);
     const { totalProducts, data } = await productsController.getProducts(
       currentPage,
       itemsPerPage,
-      searchQuery
+      searchQuery,
+      currentPrices[0], // Минимальная цена
+      currentPrices[1] // Максимальная цена
     );
 
     setTotalCountProducts(totalProducts);
@@ -50,9 +55,11 @@ const Products = () => {
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
   const handleCurrentPricesChange = (currentPrices) => {
     setCurrentPrices(currentPrices);
-  }
+  };
+
   const handleCategoryChange = (category) => {
     setCategory(category);
     setCurrentPage(undefined);
@@ -67,11 +74,6 @@ const Products = () => {
     setProducts(filteredData);
   }, [category, products]);
 
-  useEffect(async() => {
-    const test = await getProductByPrice (5);
-    console.log (test);
-  }, [currentPrices]);
-
   return (
     <div>
       <Navbar />
@@ -81,7 +83,10 @@ const Products = () => {
           <input type="text" ref={searchRef} />
           <button onClick={search}>Search</button>
         </div>
-        <RangeSlider currentPrices={currentPrices} setCurrentPrices={handleCurrentPricesChange}/>
+        <RangeSlider
+          currentPrices={currentPrices}
+          setCurrentPrices={handleCurrentPricesChange}
+        />
         <BasicSelect category={category} setCategory={handleCategoryChange} />
       </div>
       {loading ? (

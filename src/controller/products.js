@@ -3,19 +3,18 @@ import axios from "axios";
 const URL = "http://localhost:3000";
 
 const productsController = {
-  async getProducts(_page = 1, _limit = 5, q = "") {
-    const response = await axios.get(`${URL}/products`, {
-      params: {
-        _page,
-        _limit,
-        _total: true,
-        q,
-      },
-    });
+  async getProducts(_page = 1, _limit = 5, q = "", minPrice, maxPrice) {
+    const params = {
+      _page,
+      _limit,
+      _total: true,
+      q,
+      price_gte: minPrice,
+      price_lte: maxPrice,
+    };
 
-    /**
-     * Получаем значение заголовка "x-total-count" с общим количеством продуктов
-     */
+    const response = await axios.get(`${URL}/products`, { params });
+
     const totalProducts = response.headers["x-total-count"];
     const data = response.data;
 
@@ -28,10 +27,6 @@ const productsController = {
 
   async createProduct(product) {
     return await axios.post(`${URL}/products`, product);
-  },
-
-  async getProductByPrice(price) {
-    return await axios.post(`${URL}/products`, {price});
   },
 
   async updateProduct(id, product) {
